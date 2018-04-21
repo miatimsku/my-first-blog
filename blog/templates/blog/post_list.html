@@ -7,16 +7,12 @@
             <h1><a href="/">Mia's Blog</a></h1>
         </div>
 
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Ämmä</a></h2>
-            <p>Moi Lida! Mitä kuuluu?</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Oon best</a></h2>
-            <p>Heheee look at dis</p>
-        </div>
+        {% for post in posts %}
+      <div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+  {% endfor %}
     </body>
 </html>
